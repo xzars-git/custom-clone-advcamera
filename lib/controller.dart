@@ -5,7 +5,7 @@ class AdvCameraController {
   AdvCameraController._(
     this.channel,
     this._advCameraState,
-  )  {
+  ) {
     channel.setMethodCallHandler(_handleMethodCall);
   }
 
@@ -140,8 +140,8 @@ class AdvCameraController {
   }
 
   Future<void> setFocus(
-      double x,
-      double y,
+    double x,
+    double y,
   ) async {
     await channel.invokeMethod('setFocus', {"x": x, "y": y});
   }

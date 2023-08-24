@@ -13,8 +13,11 @@ import 'package:flutter/services.dart';
 part 'controller.dart';
 
 enum FlashType { auto, on, off, torch }
+
 enum CameraType { front, rear }
+
 enum CameraPreviewRatio { r16_9, r11_9, r4_3, r1 }
+
 enum CameraSessionPreset { low, medium, high, photo }
 
 typedef void CameraCreatedCallback(AdvCameraController controller);
@@ -61,7 +64,8 @@ class AdvCamera extends StatefulWidget {
   _AdvCameraState createState() => _AdvCameraState();
 }
 
-class _AdvCameraState extends State<AdvCamera> with VisibilityAwareStateMixin<AdvCamera> {
+class _AdvCameraState extends State<AdvCamera>
+    with VisibilityAwareStateMixin<AdvCamera> {
   Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers;
   late CameraPreviewRatio _cameraPreviewRatio;
   late CameraSessionPreset _cameraSessionPreset;
@@ -207,7 +211,7 @@ class _AdvCameraState extends State<AdvCamera> with VisibilityAwareStateMixin<Ad
         switch (_cameraPreviewRatio) {
           case CameraPreviewRatio.r16_9:
             widthTemp = greater;
-            heightTemp = greater * 16.0 / 9.0;
+            heightTemp = greater * 9 / 16.0;
             break;
           case CameraPreviewRatio.r11_9:
             widthTemp = greater;
