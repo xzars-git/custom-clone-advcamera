@@ -85,9 +85,9 @@ class _AdvCameraState extends State<AdvCamera>
 
   @override
   void dispose() {
-    controller?.turnOffCamera();
-    controller?.channel.invokeMethod("dispose");
-    controller?.channel.setMethodCallHandler(null);
+    // controller?.turnOffCamera();
+    // controller?.channel.invokeMethod("dispose");
+    // controller?.channel.setMethodCallHandler(null);
     super.dispose();
   }
 
