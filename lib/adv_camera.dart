@@ -211,7 +211,7 @@ class _AdvCameraState extends State<AdvCamera>
         switch (_cameraPreviewRatio) {
           case CameraPreviewRatio.r16_9:
             widthTemp = greater;
-            heightTemp = greater * 9 / 16.0;
+            heightTemp = greater * 16.0 / 9.0;
             break;
           case CameraPreviewRatio.r11_9:
             widthTemp = greater;
