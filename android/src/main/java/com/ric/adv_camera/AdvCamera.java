@@ -501,6 +501,18 @@ public class AdvCamera implements MethodChannel.MethodCallHandler,
                 handleFocus(x, y);
                 break;
             }
+            case "dispose": {
+            if (disposed) {
+                    return;
+            }
+            disposed = true;
+            methodChannel.setMethodCallHandler(null);
+            CameraFragment f = (CameraFragment) activity.getFragmentManager()
+                .findFragmentById(com.ric.adv_camera.R.id.cameraFragment);
+            if (f != null) {
+                activity.getFragmentManager().beginTransaction().remove(f).commit();
+            }
+            }
         }
     }
 

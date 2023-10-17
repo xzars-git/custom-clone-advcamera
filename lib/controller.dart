@@ -116,6 +116,10 @@ class AdvCameraController {
     await channel.invokeMethod('off', null);
   }
 
+  Future<void> dispose() async {
+    await channel.invokeMethod('dispose', null);
+  }
+
   Future<void> turnOnCamera() async {
     await channel.invokeMethod('turnOn', null);
   }
