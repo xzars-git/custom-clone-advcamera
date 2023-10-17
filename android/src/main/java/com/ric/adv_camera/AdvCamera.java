@@ -291,7 +291,7 @@ public class AdvCamera implements MethodChannel.MethodCallHandler,
                 else
                     result.success(true);
                 break;
-            case "turnOff":
+            case "off":
                 if (camera != null) {
                     camera.stopPreview();
                     camera.release();
